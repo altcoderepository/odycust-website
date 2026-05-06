@@ -18,3 +18,9 @@ Official web page
 - Error page
 - organize SEO https://nextjs.org/docs/app/getting-started/project-structure#seo
 - organized structure https://nextjs.org/docs/app/getting-started/project-structure#organizing-your-project
+- Страница с инфой
+- Страница с контактами
+- Страница с релизами
+- Прелоадер страниц
+- Фон
+- SEO (sitemap, robots, meta)
