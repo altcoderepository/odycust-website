@@ -9,6 +9,8 @@ import iconTelegram from "../../public/icon_tg.svg";
 import iconYoutube from "../../public/icon_youtube.svg";
 import iconEmail from "../../public/icon_email.svg";
 import Link from "next/link";
+import React from "react";
+import { Menu } from "@/components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,45 +39,13 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <div className="root flex flex-col justify-start">
-          <header className="p-8 flex flex-wrap justify-center-safe gap-16 items-center text-white text-lg">
-            <div className="menu flex gap-12 uppercase h-max">
-              <Link
-                href=""
-                className="p-4 transition hover:bg-white hover:text-black line-through"
-              >
-                Обо мне
-              </Link>
-              <Link
-                href=""
-                className="p-4 transition hover:bg-white hover:text-black line-through"
-              >
-                Релизы
-              </Link>
-            </div>
+          <header className="p-8 flex flex-wrap flex-row justify-between gap-8 items-start text-white text-sm">
             <div className="logo">
               <Link href="/">
-                <Image
-                  src={logo}
-                  alt="Odycust"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 75vw, 33vw"
-                  layout="responsive"
-                />
+                <Image src={logo} alt="Odycust" />
               </Link>
             </div>
-            <div className="menu flex gap-12 uppercase h-max">
-              <Link
-                href=""
-                className="p-4 transition hover:bg-white hover:text-black line-through"
-              >
-                Мерч
-              </Link>
-              <Link
-                href=""
-                className="p-4 transition hover:bg-white hover:text-black line-through"
-              >
-                Контакты
-              </Link>
-            </div>
+            <Menu />
           </header>
           <main className="overflow-hidden h-full">{children}</main>
           <footer className="absolute inset-x-0 bottom-0 p-8 flex justify-end-safe">
