@@ -33,9 +33,17 @@ body {
 .root {
   width: 100vw;
   height: 100vh;
-  background: no-repeat url("../../public/bg.gif") center / cover;
+  background: no-repeat url("../assets/images/bg.gif") center / cover;
   /* tmp */
   filter: contrast(0.7);
+}
+
+.in-development {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: no-repeat url("../assets/images/in_process.png") center / cover;
+  z-index: -1;
 }
 
 .logo {

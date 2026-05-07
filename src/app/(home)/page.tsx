@@ -1,10 +1,10 @@
 import { Metadata } from "next/types";
 
 export const metadata: Metadata = {
-  title: "Инфа | ODYCUST",
+  title: "Главная | ODYCUST",
   description: "Пишу музыку, живу музыкой",
 };
 
-export default function About() {
-  return <section className="text-white">About</section>;
+export default function Home() {
+  return <section></section>;
 }

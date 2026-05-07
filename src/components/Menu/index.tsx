@@ -1,10 +1,15 @@
 "use client";
 
+import { menuPages } from "@/config/pages";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { match } from "path-to-regexp";
 import React from "react";
 
 export const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const pathName = usePathname();
 
   return (
     <nav
@@ -17,7 +22,6 @@ export const Menu = () => {
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200"
         >
-          {/* <span className="sr-only">Open main menu</span> */}
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -36,43 +40,21 @@ export const Menu = () => {
         </button>
       </div>
       <div className="hidden lg:flex lg:gap-x-12">
-        <Link
-          href=""
-          className="p-4 transition hover:bg-white hover:text-black line-through md:text-lg"
-        >
-          Инфа
-        </Link>
-        <Link
-          href=""
-          className="p-4 transition hover:bg-white hover:text-black line-through md:text-lg"
-        >
-          Релизы
-        </Link>
-        <Link
-          href=""
-          className="p-4 transition hover:bg-white hover:text-black line-through md:text-lg"
-        >
-          Мерч
-        </Link>
-        <Link
-          href=""
-          className="p-4 transition hover:bg-white hover:text-black line-through md:text-lg"
-        >
-          Контакты
-        </Link>
+        {menuPages.map((menuItem, idx) => (
+          <Link
+            key={idx}
+            href={menuItem.href}
+            className={`${!!match(menuItem.href)(pathName) ? "underline" : null} p-4 transition hover:bg-white hover:text-black line-through md:text-lg`}
+          >
+            {menuItem.title}
+          </Link>
+        ))}
       </div>
       <div>
-        <dialog
-          // id="mobile-menu"
-          open={isMenuOpen}
-          className="backdrop:bg-transparent lg:hidden"
-        >
+        <dialog open={isMenuOpen} className="backdrop:bg-transparent lg:hidden">
           <div tabIndex={0} className="fixed inset-0 focus:outline-none">
             <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
               <div className="flex items-center justify-between">
-                {/* <a href="#" className="-m-1.5 p-1.5">
-                  <span className="sr-only">Your Company</span>
-                </a> */}
                 <button
                   type="button"
                   onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -99,30 +81,15 @@ export const Menu = () => {
               <div className="mt-16 flow-root">
                 <div className="-my-6 divide-y divide-white/10">
                   <div className="space-y-12 py-6">
-                    <Link
-                      href=""
-                      className="block transition hover:bg-white hover:text-black line-through text-lg text-white"
-                    >
-                      Инфа
-                    </Link>
-                    <Link
-                      href=""
-                      className="block transition hover:bg-white hover:text-black line-through text-lg text-white"
-                    >
-                      Релизы
-                    </Link>
-                    <Link
-                      href=""
-                      className="block transition hover:bg-white hover:text-black line-through text-lg text-white"
-                    >
-                      Мерч
-                    </Link>
-                    <Link
-                      href=""
-                      className="block transition hover:bg-white hover:text-black line-through text-lg text-white"
-                    >
-                      Контакты
-                    </Link>
+                    {menuPages.map((menuItem, idx) => (
+                      <Link
+                        key={idx}
+                        href={menuItem.href}
+                        className={`${!!match(menuItem.href)(pathName) ? "underline" : null} block transition hover:bg-white hover:text-black line-through text-lg text-white`}
+                      >
+                        {menuItem.title}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
