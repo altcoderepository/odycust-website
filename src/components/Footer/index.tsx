@@ -4,7 +4,7 @@ import { SOCIAL_NETWORKS } from "@/shared/constants";
 import { SocialNetWorkItem } from "../SocialNetWorkItem";
 
 export const Footer = () => (
-  <footer className="absolute inset-x-0 bottom-0 p-8 flex justify-end-safe">
+  <footer className="p-8 flex justify-end-safe">
     <div className="flex gap-4">
       {SOCIAL_NETWORKS.map((socialPage, idx) => (
         <SocialNetWorkItem key={idx} socialPage={socialPage} />

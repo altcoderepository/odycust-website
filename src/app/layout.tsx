@@ -31,9 +31,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <div className="root flex flex-col justify-start">
-          <div className="in-development"></div>
+          {/* <div className="in-development"></div> */}
           <Header />
-          <main className="overflow-hidden h-full">{children}</main>
+          <main className="min-h-full">{children}</main>
           <Footer />
         </div>
       </body>
