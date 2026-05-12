@@ -7,4 +7,5 @@ export type SocialNetworLink = {
   icon: string;
   alt: string;
   href: string;
+  color?: string;
 };

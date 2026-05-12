@@ -1,3 +1,4 @@
+import { SocialLink } from "@/components";
 import { SOCIAL_NETWORKS_DATA } from "@/shared/constants";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -14,72 +15,62 @@ export default function Contacts() {
         <h1>Официальные страницы</h1>
         <h2>Социальные сети:</h2>
         <p className="mb-16 break-normal leading-16">
-          <Link
+          <SocialLink
             href={SOCIAL_NETWORKS_DATA.vk.href}
-            target="_blank"
-            className="transition p-2 text-2xl font-black text-[#3770b1] hover:bg-[#3770b1] hover:text-white md:text-xl"
-          >
-            VK
-          </Link>
-          <Link
+            title="VK"
+            color={SOCIAL_NETWORKS_DATA.vk.color}
+          />
+          <SocialLink
             href={SOCIAL_NETWORKS_DATA.max.href}
-            target="_blank"
-            className="transition p-2 text-2xl font-black text-[#8f3fff] hover:bg-[#8f3fff] hover:text-white md:text-xl"
-          >
-            МАКС
-          </Link>
-          <Link
+            title="МАКС"
+            color={SOCIAL_NETWORKS_DATA.max.color}
+          />
+          <SocialLink
             href={SOCIAL_NETWORKS_DATA.telegram.href}
-            target="_blank"
-            className="transition p-2 text-2xl font-black text-[#269bcc] hover:bg-[#269bcc] hover:text-white md:text-xl"
-          >
-            telegram
-          </Link>
+            title="telegram"
+            color={SOCIAL_NETWORKS_DATA.telegram.color}
+          />
+          <SocialLink
+            href={SOCIAL_NETWORKS_DATA.youtube.href}
+            title="YouTube"
+            color={SOCIAL_NETWORKS_DATA.youtube.color}
+          />
         </p>
         <h2>Стриминги:</h2>
         <p className="mb-16 break-normal leading-16">
-          <Link
+          <SocialLink
+            invertByHover
             href="https://music.yandex.ru/artist/23537356"
-            target="_blank"
-            className="transition p-2 text-2xl font-black text-[#ffee04] hover:bg-[#ffee04] hover:text-black md:text-xl"
-          >
-            Яндекс Музыка
-          </Link>
-          <Link
+            title="Яндекс Музыка"
+            color="#ffee04"
+          />
+          <SocialLink
             href="https://vk.com/artist/7311951652756053296"
-            target="_blank"
-            className="transition p-2 text-2xl font-black text-[#3770b1] hover:bg-[#3770b1] hover:text-white md:text-xl"
-          >
-            VK Музыка
-          </Link>
-          <Link
+            title="VK Музыка"
+            color={SOCIAL_NETWORKS_DATA.vk.color}
+          />
+          <SocialLink
+            invertByHover
             href="https://zvuk.com/artist/213162472"
-            target="_blank"
-            className="transition p-2 text-2xl font-black text-[#04cf74] hover:bg-[#04cf74] hover:text-black md:text-xl"
-          >
-            ЗВУК
-          </Link>
-          <Link
+            title="ЗВУК"
+            color="#04cf74"
+          />
+          <SocialLink
             href="https://music.mts.ru/artist/23537356"
-            target="_blank"
-            className="transition p-2 text-2xl font-black text-[#611092] hover:bg-[#611092] hover:text-white md:text-xl"
-          >
-            MTS Music
-          </Link>
-          <Link
+            title="MTS Music"
+            color="#611092"
+          />
+          <SocialLink
             href="https://music.apple.com/us/artist/odycust/1787907040?"
-            target="_blank"
-            className="transition p-2 text-2xl font-black text-[#d10017] hover:bg-[#d10017] hover:text-white md:text-xl"
-          >
-            Apple Music
-          </Link>
-          <Link
+            title="Apple Music"
+            color="#d10017"
+          />
+          <SocialLink
+            invertByHover
             href="https://open.spotify.com/artist/77EkNUfZC6U2mJYkkJv5Tc"
-            target="_blank"
-            className="transition p-2 text-2xl font-black text-[#1bd15d] hover:bg-[#1bd15d] hover:text-black md:text-xl"
-          >
-            Spotify
-          </Link>
+            title="Spotify"
+            color="#1bd15d"
+          />
         </p>
         <h2>Контакты:</h2>
         <p className="mb-2">email: odycu5t@yandex.ru</p>
