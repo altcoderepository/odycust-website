@@ -86,6 +86,7 @@ export const Menu = () => {
                         key={idx}
                         href={menuItem.href}
                         className={`${!!match(menuItem.href)(pathName) ? "underline" : null} block transition hover:bg-white hover:text-black line-through text-lg text-white`}
+                        onClick={() => setIsMenuOpen(false)}
                       >
                         {menuItem.title}
                       </Link>

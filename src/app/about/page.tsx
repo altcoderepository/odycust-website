@@ -1,7 +1,4 @@
 import { Metadata } from "next/types";
-import Image from "next/image";
-
-import photoPath from "@/assets/images/me.jpg";
 
 export const metadata: Metadata = {
   title: "Инфа | ODYCUST",
